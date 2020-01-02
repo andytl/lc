@@ -1,0 +1,8 @@
+bin/
+CMakeFiles/
+.vscode/
+*.vcxproj*
+*.sln
+*.cmake
+CMakeCache.txt
+
