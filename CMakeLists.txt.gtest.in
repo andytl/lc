@@ -12,4 +12,6 @@ ExternalProject_Add(googletest
   BUILD_COMMAND     ""
   INSTALL_COMMAND   ""
   TEST_COMMAND      ""
+  # disables auto update on every build. ( Nuke bin/ and rebuild to update :) )
+  UPDATE_DISCONNECTED 1
 )

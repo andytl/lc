@@ -49,9 +49,10 @@ include_directories("${PROJECT_SOURCE_DIR}")
 
 
 
+file(GLOB_RECURSE PROBLEM_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "problems/*.cpp")
 add_executable(LC
-    problems/topKFrequent.cpp
+    ${PROBLEM_SOURCES}
 )
+
 target_link_libraries(LC gtest_main)
 add_test(NAME LC_test COMMAND LC)
-
