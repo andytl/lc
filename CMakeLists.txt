@@ -44,11 +44,14 @@ include_directories("${PROJECT_SOURCE_DIR}")
 file(GLOB_RECURSE PROBLEM_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "problems/*.cpp")
 add_executable(LC
     ${PROBLEM_SOURCES}
+    common/common.cpp
 )
 # Enable warnings for LC
 if(MSVC)
-  target_compile_options(LC PRIVATE /W4 /WX)
+    target_compile_options(LC PRIVATE /W4 /WX)
 else()
-  target_compile_options(LC PRIVATE -Wall -Wextra -pedantic -Werror)
+    target_compile_options(LC PRIVATE -Wall -Wextra -pedantic -Werror)
 endif()
+
+# Link our exe's main to google test runner.
 target_link_libraries(LC gtest_main)
