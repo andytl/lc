@@ -1,14 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
+set (CMAKE_CXX_STANDARD 14)
 
 # set the project name
 project(LC)
-
-# Build tree
-#set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
-# Where EXEs drop
-#set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-# Where Libs drop
-#set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 include_directories("${PROJECT_SOURCE_DIR}")
 
@@ -47,12 +41,14 @@ include_directories("${PROJECT_SOURCE_DIR}")
 ### END GoogleTest Config
 
 
-
-
 file(GLOB_RECURSE PROBLEM_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "problems/*.cpp")
 add_executable(LC
     ${PROBLEM_SOURCES}
 )
-
+# Enable warnings for LC
+if(MSVC)
+  target_compile_options(LC PRIVATE /W4 /WX)
+else()
+  target_compile_options(LC PRIVATE -Wall -Wextra -pedantic -Werror)
+endif()
 target_link_libraries(LC gtest_main)
-add_test(NAME LC_test COMMAND LC)

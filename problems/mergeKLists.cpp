@@ -2,6 +2,7 @@
 #include <queue>
 #include <unordered_map>
 #include <functional>
+#include <list>
 #include "gtest/gtest.h"
 
 namespace mergeKLists {
@@ -77,15 +78,14 @@ namespace mergeKLists {
     Solution s;
 
     TEST(mergeKLists, T1) {
+        vector<ListNode*> lists {
+            convertFromList(list<int> {1, 4, 5}),
+            convertFromList(list<int> {1, 3, 4}),
+            convertFromList(list<int> {2, 6})
+        };
         auto result =
             convertToList(
-                s.mergeKLists(
-                    vector<ListNode*> {
-                        convertFromList(list<int> {1, 4, 5}),
-                        convertFromList(list<int> {1, 3, 4}),
-                        convertFromList(list<int> {2, 6})
-                    }
-                )
+                s.mergeKLists(lists)
             );
 
         EXPECT_EQ(result, (list<int> {1, 1, 2, 3, 4, 4, 5, 6}));

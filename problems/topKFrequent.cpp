@@ -21,7 +21,7 @@ namespace topKFrequent {
             }
             for (auto &count : counts) {
                 maxes.emplace(count.second, count.first);
-                if (maxes.size() > k) {
+                if (maxes.size() > static_cast<size_t>(k)) {
                     maxes.pop();
                 }
             }
@@ -40,10 +40,12 @@ namespace topKFrequent {
 
     TEST(topKFrequent, T1) {
         vector<int> expected {1, 2};
-        EXPECT_EQ(expected, s.topKFrequent(vector<int>{1,1,1,2,2,3}, 2));
+        vector<int> iList {1,1,1,2,2,3};
+        EXPECT_EQ(expected, s.topKFrequent(iList, 2));
     }
     TEST(topKFrequent, T2) {
         vector<int> expected {1};
-        EXPECT_EQ(expected, s.topKFrequent(vector<int>{1}, 1));
+        vector<int> iList {1};
+        EXPECT_EQ(expected, s.topKFrequent(iList, 1));
     }
 }
