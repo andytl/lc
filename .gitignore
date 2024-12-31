@@ -1,8 +1,10 @@
 bin/
+build/
 CMakeFiles/
 .vscode/
 *.vcxproj*
 *.sln
 *.cmake
+*.pdb
 CMakeCache.txt
 
