@@ -1,11 +1,6 @@
-#include <list>
-#include "gtest/gtest.h"
-#include "../common/common.h"
+#include "problems.h"
 
 namespace reverseList {
-    using namespace std;
-    using namespace common;
-
     class Solution {
     public:
         ListNode* reverseList(ListNode* head) {

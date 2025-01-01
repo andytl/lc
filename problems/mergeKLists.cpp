@@ -1,13 +1,6 @@
-#include <vector>
-#include <queue>
-#include <list>
-#include "gtest/gtest.h"
-#include "../common/common.h"
+#include "problems.h"
 
 namespace mergeKLists {
-    using namespace std;
-    using namespace common;
-
     class Solution {
         struct LNComp {
             bool operator()(ListNode* a, ListNode* b) {

@@ -1,11 +1,6 @@
-#include <vector>
-#include <queue>
-#include <functional>
-#include "gtest/gtest.h"
+#include "problems.h"
 
 namespace medianFinder {
-    using namespace std;
-
     class MedianFinder {
         priority_queue<int, vector<int>, less<int>> smaller;
         priority_queue<int, vector<int>, greater<int>> larger;

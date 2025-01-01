@@ -1,12 +1,6 @@
-#include <vector>
-#include <queue>
-#include <unordered_map>
-#include <functional>
-#include "gtest/gtest.h"
+#include "problems.h"
 
 namespace topKFrequent {
-    using namespace std;
-
     class Solution {
         using IP = pair<int,int>;
     public:

@@ -6,10 +6,14 @@
 - Install CMake extension
 - Open this project
 
+### Adding a new file
+- Re-run `CMake: Configure` when adding new files.
+
 ### Running and debugging
 - To Run: `CMake: Run Without Debugging` (default shortcut: Ctrl+F5)
 - To Debug: Place breakpoints using VSCode.
   - `CMake: Debug`
+  - To set breakpoints, you might need to set `"editor.glyphMargin": true`
 
 ### About launch.json
 - Notes on configuring F5 for CMake: https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/debug-launch.md
